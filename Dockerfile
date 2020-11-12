@@ -1,5 +1,5 @@
 FROM alpine:3.4
-MAINTAINER Cl3m3nt
+MAINTAINER dwi.nurhadi17@gmail.com
 RUN apk update && apk upgrade && \
     apk add tzdata wget apache2 vim \
     php5-apache2 \
@@ -19,8 +19,8 @@ RUN apk update && apk upgrade && \
     php5-mysql &&  \
     rm -rf /var/cache/apk/*
 
-ENV OSTICKET_VERSION 1.9.15
-ENV TIMEZONE Europe/Paris
+ENV OSTICKET_VERSION 1.14.3
+ENV TIMEZONE Asia/Jakarta
 ENV PHP_MEMORY_LIMIT    512M
 ENV MAX_UPLOAD          50M
 ENV PHP_MAX_FILE_UPLOAD 200

@@ -7,8 +7,10 @@ echo "Install osticket v${OSTICKET_VERSION}"
 if [ ! -d "/var/www/localhost/htdocs" ]; then
   mkdir -pv /var/www/localhost/htdocs
 fi
-wget -nv -O /osTicket.zip http://osticket.com/sites/default/files/download/osTicket-v${OSTICKET_VERSION}.zip
-unzip /osTicket.zip -d /var/www/localhost/htdocs
+#wget -nv -O /osTicket.zip http://osticket.com/sites/default/files/download/osTicket-v${OSTICKET_VERSION}.zip
+wget -nv -O /osTicket.zip https://github.com/osTicket/osTicket/archive/v${OSTICKET_VERSION}.zip
+unzip /osTicket.zip -d /var/www/localhost/
+mv /var/www/localhost/osTicket-${OSTICKET_VERSION}/* /var/www/localhost/htdocs/
 
 echo "Download languages packs"
 wget -nv -O /var/www/localhost/htdocs/upload/include/i18n/fr.phar http://osticket.com/sites/default/files/download/lang/fr.phar
@@ -32,7 +34,7 @@ echo "Clean..."
 mv /var/www/localhost/htdocs/upload/* /var/www/localhost/htdocs/
 rm /var/www/localhost/htdocs/upload
 rm /var/www/localhost/htdocs/index.html
-rm -v /osTicket.zip
+#rm -v /osTicket.zip
 chmod -R 755 /var/www/localhost/htdocs/*
 
 echo "Starting daemon... ($@)"

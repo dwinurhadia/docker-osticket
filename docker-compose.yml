@@ -7,7 +7,7 @@ services :
     links:
       - db
     environment:
-      OSTICKET_VERSION : 1.9.14
+      OSTICKET_VERSION : 1.14.3
     #volumes:
       #- "${PWD}/ost-config.php:/var/www/localhost/htdocs/include/ost-sampleconfig.php"
   db:
