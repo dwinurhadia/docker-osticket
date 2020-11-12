@@ -40,4 +40,4 @@ docker-compose down
 ```
 
 ### thanks to
-https://github.com/clementlecorre/docker-osticket`
+https://github.com/clementlecorre/docker-osticket
